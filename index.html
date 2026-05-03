@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Foudagraphy | Global Studio</title>
+<title>Foudagraphy | Studio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -55,8 +55,6 @@ width:130px;
 height:130px;
 border-radius:50%;
 border:3px solid var(--gold);
-object-fit:cover;
-cursor:pointer;
 }
 
 .hero h1{font-size:34px;margin-top:10px;}
@@ -67,15 +65,12 @@ display:inline-block;
 padding:10px 24px;
 border:2px solid var(--gold);
 color:var(--gold);
-text-decoration:none;
 border-radius:30px;
-transition:.3s;
+text-decoration:none;
+cursor:pointer;
 }
 
-.btn:hover{
-background:var(--gold);
-color:#000;
-}
+.btn:hover{background:var(--gold);color:#000;}
 
 /* LINKS */
 .links{
@@ -91,14 +86,8 @@ padding:14px;
 margin:10px 0;
 background:var(--card);
 border-radius:12px;
-text-decoration:none;
 color:#fff;
-transition:.3s;
-}
-
-.link:hover{
-transform:translateY(-3px);
-border:1px solid var(--gold);
+text-decoration:none;
 }
 
 /* SECTION */
@@ -109,16 +98,13 @@ margin:30px 0 15px;
 }
 
 /* GALLERY */
-.gallery{
-max-width:1000px;
-margin:auto;
-padding:20px;
-}
-
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
 gap:10px;
+max-width:1000px;
+margin:auto;
+padding:20px;
 }
 
 .grid img{
@@ -127,11 +113,6 @@ height:120px;
 object-fit:cover;
 border-radius:10px;
 cursor:pointer;
-transition:.3s;
-}
-
-.grid img:hover{
-transform:scale(1.08);
 }
 
 /* FORM */
@@ -149,11 +130,6 @@ border:none;
 border-radius:8px;
 background:#1e1e1e;
 color:#fff;
-}
-
-textarea{
-height:100px;
-resize:none;
 }
 
 button{
@@ -174,8 +150,8 @@ background:rgba(0,0,0,0.92);
 display:none;
 align-items:center;
 justify-content:center;
-z-index:9999;
 flex-direction:column;
+z-index:9999;
 }
 
 #lightbox img{
@@ -193,27 +169,18 @@ cursor:pointer;
 color:#fff;
 }
 
-.controls{
-margin-top:15px;
-display:flex;
-gap:15px;
-}
-
-.controls button{
-width:auto;
-padding:10px 15px;
-background:var(--gold);
-border:none;
-border-radius:8px;
-cursor:pointer;
-}
-
-/* FOOTER */
-footer{
-text-align:center;
+/* ADMIN */
+.admin{
+max-width:1000px;
+margin:auto;
 padding:20px;
-opacity:.6;
-font-size:13px;
+}
+
+.card{
+background:var(--card);
+padding:15px;
+margin:10px 0;
+border-radius:10px;
 }
 </style>
 </head>
@@ -223,10 +190,10 @@ font-size:13px;
 <!-- HERO -->
 <div class="hero">
 <div class="hero-content">
-<img src="MHMD0415.jpg" loading="eager">
+<img src="MHMD0415.jpg">
 <h1>Foudagraphy Studio</h1>
-<p>Global Creative Photography Agency</p>
-<a href="https://wa.me/201551927206" class="btn">Book Now</a>
+<p>Global Creative Agency</p>
+<a class="btn" href="#booking">Book Now</a>
 </div>
 </div>
 
@@ -235,133 +202,121 @@ font-size:13px;
 <a class="link" href="#">Facebook</a>
 <a class="link" href="#">Instagram</a>
 <a class="link" href="#">TikTok</a>
-<a class="link" href="tel:01094500264">Call Now</a>
 </div>
 
 <!-- GALLERY -->
 <h2 class="section-title">Portfolio</h2>
 
-<div class="gallery">
 <div class="grid">
-<img src="BG.jpg" loading="lazy">
-<img src="BG2.jpg" loading="lazy">
-<img src="BG3.jpg" loading="lazy">
-<img src="BG4.jpg" loading="lazy">
-<img src="BG5.jpg" loading="lazy">
-<img src="BG6.jpg" loading="lazy">
-</div>
+<img src="BG.jpg">
+<img src="BG2.jpg">
+<img src="BG3.jpg">
+<img src="BG4.jpg">
+<img src="BG5.jpg">
+<img src="BG6.jpg">
 </div>
 
 <!-- BOOKING -->
-<h2 class="section-title">Book Now</h2>
+<h2 class="section-title" id="booking">Book Now</h2>
 
 <div class="form">
 <form id="bookingForm">
 
 <input type="text" id="name" placeholder="الاسم" required>
-<input type="tel" id="phone" placeholder="رقم الهاتف" required>
-
+<input type="tel" id="phone" placeholder="الرقم" required>
 <textarea id="message" placeholder="تفاصيل الحجز"></textarea>
-
-<p style="color:#aaa;font-size:13px;text-align:center;">
-ارفع صورة تحويل الدفع لتأكيد الحجز
-</p>
 
 <input type="file" id="paymentImage" accept="image/*" required>
 
 <button type="submit">إرسال الحجز</button>
 
-<p id="status" style="text-align:center;margin-top:10px;color:#aaa;"></p>
+<p id="status" style="text-align:center;margin-top:10px;"></p>
 
 </form>
+</div>
+
+<!-- ADMIN -->
+<h2 class="section-title">Admin Dashboard</h2>
+<div class="admin" id="adminPanel">
+<p style="color:#aaa;text-align:center;">Loading bookings...</p>
 </div>
 
 <!-- LIGHTBOX -->
 <div id="lightbox">
 <div class="close" onclick="closeLB()">×</div>
 <img id="lbImg">
-
-<div class="controls">
-<button onclick="prev()">Prev</button>
-<button onclick="next()">Next</button>
 </div>
-</div>
-
-<footer>© 2026 Foudagraphy Studio</footer>
 
 <script>
-const imgs = document.querySelectorAll(".grid img");
-const lb = document.getElementById("lightbox");
-const lbImg = document.getElementById("lbImg");
-let index = 0;
+/* LIGHTBOX */
+const imgs=document.querySelectorAll(".grid img");
+const lb=document.getElementById("lightbox");
+const lbImg=document.getElementById("lbImg");
 
-imgs.forEach((img,i)=>{
+imgs.forEach(img=>{
 img.onclick=()=>{
-index=i;
 lb.style.display="flex";
 lbImg.src=img.src;
 }
 });
 
 function closeLB(){lb.style.display="none"}
-function next(){index=(index+1)%imgs.length;lbImg.src=imgs[index].src;}
-function prev(){index=(index-1+imgs.length)%imgs.length;lbImg.src=imgs[index].src;}
-
 lb.onclick=(e)=>{if(e.target===lb)closeLB()}
-</script>
 
-<!-- FIREBASE -->
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
+/* CLOUDINARY */
+const CLOUD_NAME="foudagraphy";
+const UPLOAD_PRESET="foudagraphy_upload";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDVhVeLqfC1iDHLyHaqw71VR-n7OmWNDls",
-  authDomain: "foudagraphy-5aaaf.firebaseapp.com",
-  projectId: "foudagraphy-5aaaf",
-  storageBucket: "foudagraphy-5aaaf.firebasestorage.app",
-  messagingSenderId: "421162081730",
-  appId: "1:421162081730:web:28fa3be6f3a62e0f5bca5b",
-  measurementId: "G-F06PG9ZS6H"
-};
+async function uploadImage(file){
+const fd=new FormData();
+fd.append("file",file);
+fd.append("upload_preset",UPLOAD_PRESET);
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const storage = getStorage(app);
+const res=await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`,{
+method:"POST",
+body:fd
+});
 
-const form = document.getElementById("bookingForm");
-const status = document.getElementById("status");
+const data=await res.json();
+return data.secure_url;
+}
 
-form.addEventListener("submit", async (e)=>{
+/* FORM */
+const form=document.getElementById("bookingForm");
+const status=document.getElementById("status");
+
+form.addEventListener("submit",async(e)=>{
 e.preventDefault();
 
-status.innerText="⏳ جاري إرسال الحجز...";
+status.innerText="⏳ Sending...";
 
-const name=document.getElementById("name").value;
+const name=nameInput.value=document.getElementById("name").value;
 const phone=document.getElementById("phone").value;
 const message=document.getElementById("message").value;
 const file=document.getElementById("paymentImage").files[0];
 
-try{
+const imageURL=await uploadImage(file);
 
-const imgRef=ref(storage,"payments/"+Date.now()+file.name);
-await uploadBytes(imgRef,file);
-const imageURL=await getDownloadURL(imgRef);
-
-await addDoc(collection(db,"bookings"),{
-name,phone,message,
-imageURL,
-status:"pending",
-date:new Date().toISOString()
+/* Formspree */
+await fetch("https://formspree.io/f/xdabenkv",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({name,phone,message,imageURL})
 });
 
-status.innerText="✅ تم إرسال الحجز";
+status.innerText="✅ Done";
 form.reset();
+});
 
-}catch(err){
-status.innerText="❌ خطأ حاول مرة أخرى";
-}
+/* ADMIN (local demo) */
+const adminPanel=document.getElementById("adminPanel");
+
+fetch("https://api.formspree.io/forms/xdabenkv/submissions")
+.catch(()=>{})
+.then(()=> {
+adminPanel.innerHTML=`
+<div class="card">📌 الحجوزات بتظهر في Email أو Formspree dashboard</div>
+`;
 });
 </script>
 
