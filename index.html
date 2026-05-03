@@ -6,6 +6,7 @@
 <title>Foudagraphy</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 * {
@@ -22,30 +23,36 @@ body {
     justify-content: center;
     align-items: center;
     color: white;
+    overflow: hidden;
 }
 
+/* Overlay */
 .overlay {
     position: absolute;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(12px);
-    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(15px);
+    background: rgba(0,0,0,0.65);
 }
 
+/* Container */
 .container {
     position: relative;
     text-align: center;
     width: 90%;
-    max-width: 360px;
+    max-width: 380px;
+    animation: fadeIn 1.2s ease;
 }
 
+/* Profile */
 .profile img {
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     border: 3px solid gold;
-    margin-bottom: 10px;
     object-fit: cover;
+    margin-bottom: 10px;
+    animation: scaleIn 1s ease;
 }
 
 h1 {
@@ -56,38 +63,87 @@ h1 {
 .subtitle {
     color: gold;
     font-size: 14px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
+/* Links */
 .link {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
     margin: 10px 0;
-    padding: 13px;
-    border-radius: 14px;
-    background: rgba(255,255,255,0.1);
+    padding: 14px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.08);
     text-decoration: none;
     color: white;
     transition: 0.3s;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.15);
+    backdrop-filter: blur(5px);
 }
 
+.link i {
+    width: 20px;
+}
+
+/* Hover */
 .link:hover {
-    background: rgba(255,255,255,0.2);
+    transform: translateY(-3px);
+    background: rgba(255,255,255,0.15);
 }
 
+/* Primary Button */
 .primary {
     border: 2px solid gold;
     color: gold;
     font-weight: bold;
+    background: transparent;
 }
 
+.primary:hover {
+    background: gold;
+    color: black;
+}
+
+/* Floating WhatsApp */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    transition: 0.3s;
+}
+
+.whatsapp:hover {
+    transform: scale(1.1);
+}
+
+/* Footer */
 .footer {
     margin-top: 20px;
     font-size: 12px;
     opacity: 0.6;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes scaleIn {
+    from {transform: scale(0);}
+    to {transform: scale(1);}
 }
 </style>
 
@@ -100,26 +156,50 @@ h1 {
 <div class="container">
 
     <div class="profile">
-        <img src="profile.jpg" alt="">
+        <img src="profile.jpg">
         <h1>Foudagraphy</h1>
         <div class="subtitle">Professional Photographer</div>
     </div>
 
-    <a href="https://wa.me/201551927206" class="link primary">📅 احجز الآن | Book Now</a>
+    <a href="https://wa.me/201551927206" class="link primary">
+        <i class="fa-solid fa-calendar-check"></i> احجز الآن | Book Now
+    </a>
 
-    <a href="https://www.facebook.com/MahmoudFouda8282" class="link">📘 Facebook</a>
-    <a href="https://www.instagram.com/foudagraphy_official/" class="link">📸 Instagram</a>
-    <a href="https://www.tiktok.com/@foudagraphy_official" class="link">🎵 TikTok</a>
-    <a href="https://wa.me/201551927206" class="link">💬 WhatsApp</a>
+    <a href="https://www.facebook.com/MahmoudFouda8282" class="link">
+        <i class="fa-brands fa-facebook-f"></i> Facebook
+    </a>
 
-    <a href="tel:01094500264" class="link">📞 Call Me</a>
+    <a href="https://www.instagram.com/foudagraphy_official/" class="link">
+        <i class="fa-brands fa-instagram"></i> Instagram
+    </a>
 
-    <a href="#" class="link">💳 تحويل فلوس (Vodafone Cash: 01551927206)</a>
-    <a href="#" class="link">💳 InstaPay: 01094500264</a>
+    <a href="https://www.tiktok.com/@foudagraphy_official" class="link">
+        <i class="fa-brands fa-tiktok"></i> TikTok
+    </a>
+
+    <a href="https://wa.me/201551927206" class="link">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+
+    <a href="tel:01094500264" class="link">
+        <i class="fa-solid fa-phone"></i> Call Me
+    </a>
+
+    <a href="#" class="link">
+        <i class="fa-solid fa-money-bill-wave"></i> Vodafone Cash: 01551927206
+    </a>
+
+    <a href="#" class="link">
+        <i class="fa-solid fa-credit-card"></i> InstaPay: 01094500264
+    </a>
 
     <div class="footer">© Foudagraphy</div>
 
 </div>
+
+<a href="https://wa.me/201551927206" class="whatsapp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
 
 </body>
 </html>
