@@ -1,162 +1,229 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Foudagraphy</title>
+<title>Foudagraphy | Creative Studio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Cairo',sans-serif;}
+:root{
+  --bg:#0b0b0b;
+  --card:#161616;
+  --gold:#d6b25e;
+  --text:#fff;
+  --muted:#b3b3b3;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Cairo',sans-serif;
+}
 
 body{
-background:#0d0d0d;
-color:white;
+background:var(--bg);
+color:var(--text);
 }
 
-/* HEADER */
-.header{
-text-align:center;
-padding:40px 20px;
-background:url('IMG_8457.jpg') center/cover;
+/* HERO (Agency Style) */
+.hero{
+height:90vh;
+background:url('IMG_8457.jpg') center/cover no-repeat;
 position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
 }
 
-.header::after{
+.hero::after{
 content:'';
 position:absolute;
 inset:0;
-background:rgba(0,0,0,0.6);
+background:rgba(0,0,0,0.65);
 }
 
-.header-content{
+.hero-content{
 position:relative;
 z-index:2;
+max-width:700px;
+padding:20px;
 }
 
-.header img{
-width:110px;
-height:110px;
+.hero img{
+width:130px;
+height:130px;
 border-radius:50%;
-border:3px solid gold;
+border:3px solid var(--gold);
 object-fit:cover;
+margin-bottom:10px;
+box-shadow:0 0 25px rgba(214,178,94,0.3);
 }
 
-h1{margin-top:10px;}
-.subtitle{color:gold;margin-bottom:15px;}
+.hero h1{
+font-size:34px;
+letter-spacing:1px;
+}
+
+.hero p{
+color:var(--gold);
+margin:10px 0 20px;
+}
 
 .btn{
 display:inline-block;
-padding:10px 20px;
-border:2px solid gold;
-color:gold;
+padding:10px 24px;
+border:2px solid var(--gold);
+color:var(--gold);
 text-decoration:none;
-border-radius:10px;
-margin-top:10px;
+border-radius:30px;
+transition:.3s;
+}
+
+.btn:hover{
+background:var(--gold);
+color:#000;
+transform:scale(1.05);
+}
+
+/* SECTION TITLE */
+.section-title{
+text-align:center;
+margin:40px 0 20px;
+font-size:22px;
+color:var(--gold);
 }
 
 /* LINKS */
 .links{
-padding:20px;
+max-width:500px;
+margin:20px auto;
+padding:0 15px;
 }
 
 .link{
 display:block;
 text-align:center;
-padding:12px;
+padding:14px;
 margin:10px 0;
-background:#1a1a1a;
+background:var(--card);
 border-radius:12px;
 text-decoration:none;
-color:white;
+color:var(--text);
 transition:.3s;
+border:1px solid transparent;
 }
 
-.link:hover{background:#333;}
+.link:hover{
+border-color:var(--gold);
+transform:translateY(-3px);
+}
 
-/* GALLERY */
+/* GALLERY (THUMBNAIL STYLE) */
 .gallery{
+max-width:1000px;
+margin:auto;
 padding:20px;
-}
-
-.gallery h2{
-text-align:center;
-margin-bottom:15px;
 }
 
 .grid{
 display:grid;
-grid-template-columns:repeat(2,1fr);
+grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
 gap:10px;
 }
 
 .grid img{
 width:100%;
+height:120px;              /* 🔥 ده اللي صغّر الصور */
+object-fit:cover;
 border-radius:10px;
+transition:.3s;
+filter:brightness(0.9);
+}
+
+.grid img:hover{
+transform:scale(1.08);
+filter:brightness(1.1);
 }
 
 /* FORM */
 .form{
-padding:20px;
-}
-
-.form h2{
-text-align:center;
-margin-bottom:15px;
+max-width:500px;
+margin:40px auto;
+padding:0 15px;
 }
 
 input,textarea{
 width:100%;
-padding:10px;
+padding:12px;
 margin:8px 0;
 border:none;
 border-radius:8px;
+background:#1e1e1e;
+color:#fff;
+outline:none;
+}
+
+textarea{
+height:110px;
+resize:none;
 }
 
 button{
 width:100%;
 padding:12px;
-background:gold;
+background:var(--gold);
 border:none;
 border-radius:10px;
 font-weight:bold;
 cursor:pointer;
+transition:.3s;
 }
 
+button:hover{
+background:#b8953f;
+}
+
+/* FOOTER */
 .footer{
 text-align:center;
-padding:15px;
-opacity:.5;
+padding:20px;
+opacity:.6;
+font-size:13px;
+margin-top:20px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<div class="header">
-<div class="header-content">
-<img src="MHMD0415.JPG">
-<h1>Foudagraphy</h1>
-<div class="subtitle">Professional Photographer</div>
-<a href="https://wa.me/201551927206" class="btn">احجز الآن</a>
+<!-- HERO -->
+<div class="hero">
+<div class="hero-content">
+<img src="MHMD0415.JPG" alt="profile">
+<h1>Foudagraphy Studio</h1>
+<p>Creative Photography & Visual Storytelling</p>
+<a href="https://wa.me/201551927206" class="btn">احجز جلسة الآن</a>
 </div>
 </div>
 
 <!-- LINKS -->
+<h2 class="section-title">تواصل معنا</h2>
 <div class="links">
 <a href="https://www.facebook.com/MahmoudFouda8282" class="link">Facebook</a>
 <a href="https://www.instagram.com/foudagraphy_official/" class="link">Instagram</a>
 <a href="https://www.tiktok.com/@foudagraphy_official" class="link">TikTok</a>
-<a href="tel:01094500264" class="link">Call Me</a>
-<a href="#" class="link">Vodafone Cash: 01551927206</a>
-<a href="#" class="link">InstaPay: 01094500264</a>
+<a href="tel:01094500264" class="link">Call Now</a>
+<a class="link">Vodafone Cash: 01551927206</a>
+<a class="link">InstaPay: 01094500264</a>
 </div>
 
 <!-- GALLERY -->
+<h2 class="section-title">Our Work</h2>
 <div class="gallery">
-<h2>My Work</h2>
 <div class="grid">
 <img src="BG.jpg">
 <img src="BG2.jpg">
@@ -168,17 +235,17 @@ opacity:.5;
 </div>
 
 <!-- FORM -->
+<h2 class="section-title">Book a Session</h2>
 <div class="form">
-<h2>احجز الآن</h2>
 <form action="https://formspree.io/f/xdabenkv" method="POST">
-<input type="text" name="name" placeholder="اسمك" required>
-<input type="tel" name="phone" placeholder="رقمك" required>
+<input type="text" name="name" placeholder="الاسم" required>
+<input type="tel" name="phone" placeholder="رقم الهاتف" required>
 <textarea name="message" placeholder="تفاصيل الحجز"></textarea>
-<button type="submit">إرسال</button>
+<button type="submit">إرسال الطلب</button>
 </form>
 </div>
 
-<div class="footer">© Foudagraphy</div>
+<div class="footer">© 2026 Foudagraphy Studio</div>
 
 </body>
 </html>
