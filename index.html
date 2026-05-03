@@ -3,17 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Foudagraphy | Global Creative Studio</title>
+<title>Foudagraphy | Global Studio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
---bg:#0a0a0a;
---card:#151515;
+--bg:#0b0b0b;
+--card:#161616;
 --gold:#d6b25e;
 --text:#fff;
---muted:#b5b5b5;
 }
 
 *{
@@ -21,7 +20,6 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Cairo',sans-serif;
-scroll-behavior:smooth;
 }
 
 body{
@@ -29,41 +27,9 @@ background:var(--bg);
 color:var(--text);
 }
 
-/* NAVBAR */
-nav{
-position:fixed;
-top:0;
-width:100%;
-background:rgba(0,0,0,0.7);
-backdrop-filter:blur(10px);
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:12px 20px;
-z-index:1000;
-}
-
-nav h2{
-color:var(--gold);
-font-size:18px;
-}
-
-nav a{
-color:#fff;
-margin:0 10px;
-text-decoration:none;
-font-size:14px;
-opacity:.8;
-}
-
-nav a:hover{
-color:var(--gold);
-opacity:1;
-}
-
 /* HERO */
 .hero{
-height:100vh;
+height:90vh;
 background:url('IMG_8457.jpg') center/cover no-repeat;
 display:flex;
 align-items:center;
@@ -82,33 +48,27 @@ background:rgba(0,0,0,0.65);
 .hero-content{
 position:relative;
 z-index:2;
-max-width:700px;
 }
 
 .hero img{
-width:140px;
-height:140px;
+width:130px;
+height:130px;
 border-radius:50%;
 border:3px solid var(--gold);
-margin-bottom:10px;
+object-fit:cover;
+cursor:pointer;
 }
 
-.hero h1{
-font-size:38px;
-}
-
-.hero p{
-color:var(--gold);
-margin:10px 0 20px;
-}
+.hero h1{font-size:34px;margin-top:10px;}
+.hero p{color:var(--gold);margin:10px 0 20px;}
 
 .btn{
 display:inline-block;
-padding:12px 26px;
+padding:10px 24px;
 border:2px solid var(--gold);
 color:var(--gold);
-border-radius:30px;
 text-decoration:none;
+border-radius:30px;
 transition:.3s;
 }
 
@@ -117,51 +77,53 @@ background:var(--gold);
 color:#000;
 }
 
-/* SECTIONS */
-section{
-padding:80px 20px;
-max-width:1100px;
+/* LINKS */
+.links{
+max-width:500px;
 margin:auto;
+padding:20px;
 }
 
-.title{
+.link{
+display:block;
+text-align:center;
+padding:14px;
+margin:10px 0;
+background:var(--card);
+border-radius:12px;
+text-decoration:none;
+color:#fff;
+transition:.3s;
+}
+
+.link:hover{
+transform:translateY(-3px);
+border:1px solid var(--gold);
+}
+
+/* SECTION */
+.section-title{
 text-align:center;
 color:var(--gold);
-margin-bottom:30px;
-font-size:24px;
-}
-
-/* SERVICES */
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:15px;
-}
-
-.card{
-background:var(--card);
-padding:20px;
-border-radius:12px;
-text-align:center;
-transition:.3s;
-border:1px solid transparent;
-}
-
-.card:hover{
-border-color:var(--gold);
-transform:translateY(-5px);
+margin:30px 0 15px;
 }
 
 /* GALLERY */
+.gallery{
+max-width:1000px;
+margin:auto;
+padding:20px;
+}
+
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
 gap:10px;
 }
 
 .grid img{
 width:100%;
-height:130px;
+height:120px;
 object-fit:cover;
 border-radius:10px;
 cursor:pointer;
@@ -169,18 +131,29 @@ transition:.3s;
 }
 
 .grid img:hover{
-transform:scale(1.07);
+transform:scale(1.08);
 }
 
-/* CONTACT */
+/* FORM */
+.form{
+max-width:500px;
+margin:auto;
+padding:20px;
+}
+
 input,textarea{
 width:100%;
 padding:12px;
 margin:8px 0;
-background:#1c1c1c;
 border:none;
 border-radius:8px;
+background:#1e1e1e;
 color:#fff;
+}
+
+textarea{
+height:100px;
+resize:none;
 }
 
 button{
@@ -201,7 +174,7 @@ background:rgba(0,0,0,0.92);
 display:none;
 align-items:center;
 justify-content:center;
-z-index:2000;
+z-index:9999;
 flex-direction:column;
 }
 
@@ -222,14 +195,16 @@ color:#fff;
 
 .controls{
 margin-top:15px;
+display:flex;
+gap:15px;
 }
 
 .controls button{
-padding:8px 14px;
-margin:0 5px;
+width:auto;
+padding:10px 15px;
 background:var(--gold);
 border:none;
-border-radius:6px;
+border-radius:8px;
 cursor:pointer;
 }
 
@@ -245,42 +220,28 @@ font-size:13px;
 
 <body>
 
-<!-- NAV -->
-<nav>
-<h2>Foudagraphy</h2>
-<div>
-<a href="#services">Services</a>
-<a href="#work">Work</a>
-<a href="#contact">Contact</a>
-</div>
-</nav>
-
 <!-- HERO -->
 <div class="hero">
 <div class="hero-content">
-<img src="MHMD0415.JPG" loading="eager">
+<img src="MHMD0415.jpg" loading="eager">
 <h1>Foudagraphy Studio</h1>
 <p>Global Creative Photography Agency</p>
 <a href="https://wa.me/201551927206" class="btn">Book Now</a>
 </div>
 </div>
 
-<!-- SERVICES -->
-<section id="services">
-<h2 class="title">Our Services</h2>
-
-<div class="services">
-<div class="card">Portrait Photography</div>
-<div class="card">Wedding Coverage</div>
-<div class="card">Commercial Shoots</div>
-<div class="card">Event Photography</div>
+<!-- LINKS -->
+<div class="links">
+<a class="link" href="#">Facebook</a>
+<a class="link" href="#">Instagram</a>
+<a class="link" href="#">TikTok</a>
+<a class="link" href="tel:01094500264">Call Now</a>
 </div>
-</section>
 
 <!-- GALLERY -->
-<section id="work">
-<h2 class="title">Portfolio</h2>
+<h2 class="section-title">Portfolio</h2>
 
+<div class="gallery">
 <div class="grid">
 <img src="BG.jpg" loading="lazy">
 <img src="BG2.jpg" loading="lazy">
@@ -289,33 +250,44 @@ font-size:13px;
 <img src="BG5.jpg" loading="lazy">
 <img src="BG6.jpg" loading="lazy">
 </div>
-</section>
+</div>
 
-<!-- CONTACT -->
-<section id="contact">
-<h2 class="title">Contact Us</h2>
+<!-- BOOKING -->
+<h2 class="section-title">Book Now</h2>
 
-<form action="https://formspree.io/f/xdabenkv" method="POST">
-<input type="text" name="name" placeholder="Name" required>
-<input type="tel" name="phone" placeholder="Phone" required>
-<textarea name="message" placeholder="Message"></textarea>
-<button type="submit">Send</button>
+<div class="form">
+<form id="bookingForm">
+
+<input type="text" id="name" placeholder="الاسم" required>
+<input type="tel" id="phone" placeholder="رقم الهاتف" required>
+
+<textarea id="message" placeholder="تفاصيل الحجز"></textarea>
+
+<p style="color:#aaa;font-size:13px;text-align:center;">
+ارفع صورة تحويل الدفع لتأكيد الحجز
+</p>
+
+<input type="file" id="paymentImage" accept="image/*" required>
+
+<button type="submit">إرسال الحجز</button>
+
+<p id="status" style="text-align:center;margin-top:10px;color:#aaa;"></p>
+
 </form>
-</section>
-
-<footer>
-© 2026 Foudagraphy Studio — All Rights Reserved
-</footer>
+</div>
 
 <!-- LIGHTBOX -->
 <div id="lightbox">
 <div class="close" onclick="closeLB()">×</div>
 <img id="lbImg">
+
 <div class="controls">
 <button onclick="prev()">Prev</button>
 <button onclick="next()">Next</button>
 </div>
 </div>
+
+<footer>© 2026 Foudagraphy Studio</footer>
 
 <script>
 const imgs = document.querySelectorAll(".grid img");
@@ -332,18 +304,63 @@ lbImg.src=img.src;
 });
 
 function closeLB(){lb.style.display="none"}
-
-function next(){
-index=(index+1)%imgs.length;
-lbImg.src=imgs[index].src;
-}
-
-function prev(){
-index=(index-1+imgs.length)%imgs.length;
-lbImg.src=imgs[index].src;
-}
+function next(){index=(index+1)%imgs.length;lbImg.src=imgs[index].src;}
+function prev(){index=(index-1+imgs.length)%imgs.length;lbImg.src=imgs[index].src;}
 
 lb.onclick=(e)=>{if(e.target===lb)closeLB()}
+</script>
+
+<!-- FIREBASE -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
+
+const firebaseConfig = {
+apiKey: "YOUR_API_KEY",
+authDomain: "YOUR_PROJECT.firebaseapp.com",
+projectId: "YOUR_PROJECT_ID",
+storageBucket: "YOUR_PROJECT.appspot.com",
+appId: "YOUR_APP_ID"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const storage = getStorage(app);
+
+const form = document.getElementById("bookingForm");
+const status = document.getElementById("status");
+
+form.addEventListener("submit", async (e)=>{
+e.preventDefault();
+
+status.innerText="⏳ جاري إرسال الحجز...";
+
+const name=document.getElementById("name").value;
+const phone=document.getElementById("phone").value;
+const message=document.getElementById("message").value;
+const file=document.getElementById("paymentImage").files[0];
+
+try{
+
+const imgRef=ref(storage,"payments/"+Date.now()+file.name);
+await uploadBytes(imgRef,file);
+const imageURL=await getDownloadURL(imgRef);
+
+await addDoc(collection(db,"bookings"),{
+name,phone,message,
+imageURL,
+status:"pending",
+date:new Date().toISOString()
+});
+
+status.innerText="✅ تم إرسال الحجز";
+form.reset();
+
+}catch(err){
+status.innerText="❌ خطأ حاول مرة أخرى";
+}
+});
 </script>
 
 </body>
