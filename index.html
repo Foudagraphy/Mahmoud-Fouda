@@ -82,6 +82,7 @@ border-radius:30px;
 transition:.3s;
 position:relative;
 overflow:hidden;
+margin-top:10px;
 }
 
 .btn:hover{
@@ -257,31 +258,6 @@ transform:scale(1.03);
 filter:brightness(1.1);
 }
 
-/* LIGHTBOX */
-#lightbox{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,0.95);
-display:none;
-align-items:center;
-justify-content:center;
-z-index:9999;
-}
-
-#lightbox img{
-max-width:90%;
-max-height:80%;
-border-radius:10px;
-}
-
-.close{
-position:absolute;
-top:20px;
-right:20px;
-font-size:30px;
-cursor:pointer;
-}
-
 /* WHATSAPP */
 .whatsapp{
 position:fixed;
@@ -303,6 +279,42 @@ transition:.3s;
 
 .whatsapp:hover{
 transform:scale(1.1);
+}
+
+/* FLOATING PANEL */
+.floating-panel{
+position:fixed;
+bottom:25px;
+right:20px;
+display:flex;
+flex-direction:column;
+gap:10px;
+z-index:9999;
+}
+
+.floating-panel a{
+text-decoration:none;
+padding:12px 16px;
+border-radius:30px;
+font-weight:bold;
+text-align:center;
+box-shadow:0 0 20px rgba(0,0,0,0.4);
+transition:.3s;
+}
+
+.floating-book{
+background:#d6b25e;
+color:#000;
+}
+
+.floating-pack{
+background:#151515;
+color:#d6b25e;
+border:1px solid #d6b25e;
+}
+
+.floating-panel a:hover{
+transform:scale(1.05);
 }
 
 /* FOOTER */
@@ -327,6 +339,12 @@ font-size:13px;
 <a class="btn" href="https://wa.me/201551927206" target="_blank">
 <i class="fab fa-whatsapp"></i> Book Now
 </a>
+
+<!-- زر الباكيدجات الجديد -->
+<a class="btn" href="https://foudagraphy.github.io/booking/#booking">
+<i class="fas fa-layer-group"></i> الباكيدجات والحجز
+</a>
+
 </div>
 </div>
 
@@ -412,10 +430,17 @@ font-size:13px;
 </div>
 </div>
 
-<!-- LIGHTBOX -->
-<div id="lightbox">
-<div class="close" onclick="closeLB()">×</div>
-<img id="lbImg">
+<!-- FLOATING PANEL -->
+<div class="floating-panel">
+
+<a class="floating-book" href="https://foudagraphy.github.io/booking/#booking">
+📸 احجز الآن
+</a>
+
+<a class="floating-pack" href="https://foudagraphy.github.io/booking/#booking">
+💰 الباكيدجات
+</a>
+
 </div>
 
 <!-- WHATSAPP -->
@@ -424,27 +449,6 @@ font-size:13px;
 </a>
 
 <footer>© 2026 Foudagraphy Studio</footer>
-
-<script>
-const imgs=document.querySelectorAll(".gallery img");
-const lb=document.getElementById("lightbox");
-const lbImg=document.getElementById("lbImg");
-
-imgs.forEach(img=>{
-img.onclick=()=>{
-lb.style.display="flex";
-lbImg.src=img.src;
-}
-});
-
-function closeLB(){
-lb.style.display="none";
-}
-
-lb.onclick=e=>{
-if(e.target===lb) closeLB();
-}
-</script>
 
 </body>
 </html>
