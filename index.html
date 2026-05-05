@@ -111,15 +111,31 @@ flex-direction:column;
 align-items:center;
 justify-content:center;
 gap:6px;
-width:75px;height:75px;
+width:75px;
+height:75px;
 border-radius:15px;
 background:var(--card);
 color:#fff;
 text-decoration:none;
+font-size:20px;
 transition:.3s;
+box-shadow:0 0 10px rgba(0,0,0,0.4);
 }
 
-.links a:hover{transform:translateY(-5px) scale(1.05);}
+.links a span{
+font-size:12px;
+opacity:.8;
+}
+
+.links a:hover{
+transform:translateY(-5px) scale(1.05);
+}
+
+/* ألوان الهوفر */
+.links a:nth-child(1):hover{background:#E1306C;}
+.links a:nth-child(2):hover{background:#1877F2;}
+.links a:nth-child(3):hover{background:#000;}
+.links a:nth-child(4):hover{background:#25D366;}
 
 /* SECTION */
 .section{padding:60px 20px;max-width:1000px;margin:auto;}
@@ -282,10 +298,27 @@ footer{text-align:center;padding:20px;opacity:.5;}
 
 <!-- SOCIAL -->
 <div class="links">
-<a href="https://www.instagram.com/foudagraphy_official/" target="_blank"><i class="fab fa-instagram"></i></a>
-<a href="https://www.facebook.com/MahmoudFouda8282" target="_blank"><i class="fab fa-facebook"></i></a>
-<a href="https://www.tiktok.com/@foudagraphy_official" target="_blank"><i class="fab fa-tiktok"></i></a>
-<a href="tel:01551927206"><i class="fas fa-phone"></i></a>
+
+<a href="https://www.instagram.com/foudagraphy_official/" target="_blank">
+<i class="fab fa-instagram"></i>
+<span>Instagram</span>
+</a>
+
+<a href="https://www.facebook.com/MahmoudFouda8282" target="_blank">
+<i class="fab fa-facebook-f"></i>
+<span>Facebook</span>
+</a>
+
+<a href="https://www.tiktok.com/@foudagraphy_official" target="_blank">
+<i class="fab fa-tiktok"></i>
+<span>TikTok</span>
+</a>
+
+<a href="tel:01551927206">
+<i class="fas fa-phone"></i>
+<span>Call</span>
+</a>
+
 </div>
 
 <!-- SERVICES -->
